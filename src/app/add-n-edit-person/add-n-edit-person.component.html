@@ -1,0 +1,40 @@
+<form>
+  <div class="container-fluid">
+    <div class="row form-group">
+      <div class="col-3 text-right">
+        ФИО
+      </div>
+      <div class="col-6">
+        <input name="userName" type="text" class="form-control" placeholder="Введите ФИО" [(ngModel)]="PersonService.userName" />
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-3 text-right">
+        Номер телефона
+      </div>
+      <div class="col-6">
+        <input name="userPhone" type="text" class="form-control" placeholder="Введите телефон" [(ngModel)]="PersonService.userPhone" />
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-3 text-right">
+        e-mail
+      </div>
+      <div class="col-6">
+        <input name="userEmail" type="text" class="form-control" placeholder="name@example.com" [(ngModel)]="PersonService.userEmail" />
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="col-3 ">
+      </div>
+      <div class="col-6">
+
+        <button type="button" class="btn btn-warning" (click)="onAddNewPerson()"
+        *ngIf="this.PersonService.currentPersonId == -1">Добавить</button>
+        <button type="button" class="btn btn-primary" (click)="onSavePerson()"
+        *ngIf="this.PersonService.currentPersonId > -1">Сохранить</button>
+
+      </div>
+    </div>
+  </div>
+</form>
